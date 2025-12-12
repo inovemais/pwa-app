@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: estadio-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: RENDER
+        value: true
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: SECRET
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: EXPIRES_PASSWORD
+        value: 86400
+      - key: SALT_ROUNDS
+        value: 10
+      - key: HOSTNAME
+        value: 0.0.0.0
