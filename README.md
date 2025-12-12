@@ -74,6 +74,3 @@ npm run dev
 - API REST documentada com Swagger
 - WebSocket para comunicação em tempo real
 
-## Licença
-
-[Adicione a licença aqui]
