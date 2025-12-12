@@ -42,8 +42,23 @@ npm install
 
 ## Configuração
 
-1. Configure as variáveis de ambiente no `Backend/config.js`
-2. Certifique-se de que o MongoDB está em execução
+### Variáveis de Ambiente
+
+1. Copie o arquivo de exemplo de variáveis de ambiente:
+   ```bash
+   cd Backend
+   cp .env.example .env
+   ```
+
+2. Edite o arquivo `.env` e configure as seguintes variáveis:
+   - `MONGODB_URI`: String de conexão do MongoDB (MongoDB Atlas ou local)
+   - `SECRET`: Chave secreta para JWT (use uma string forte em produção)
+   - `EXPIRES_PASSWORD`: Tempo de expiração de senha em segundos (padrão: 86400 = 24 horas)
+   - `SALT_ROUNDS`: Rounds de salt para bcrypt (padrão: 10)
+   - `PORT`: Porta do servidor (padrão: 3000)
+   - `HOSTNAME`: Hostname do servidor (padrão: 127.0.0.1)
+
+**Importante:** O arquivo `.env` não será commitado no Git por questões de segurança. Use o `.env.example` como referência.
 
 ## Execução
 

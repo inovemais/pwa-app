@@ -1,3 +1,6 @@
+// Carregar variáveis de ambiente primeiro
+require('dotenv').config();
+
 const express = require("express");
 const http = require("http");
 const mongoose = require("mongoose");
@@ -9,8 +12,8 @@ const swaggerSpec = require('./swagger');
 
 const config = require('./config');
 
-const hostname = "127.0.0.1";
-const port = 3000;
+const hostname = config.hostname;
+const port = config.port;
 
 mongoose.connect(config.db)
 .then(() => console.log('Conection successful!'))
